@@ -35,7 +35,7 @@ export default function Navbar() {
           {/* <a href="#world" style={{ color: '#ccc', fontSize: '14px' }}>World Tours</a> */}
           <a href="#visa" style={{ color: '#ccc', fontSize: '14px' }}>Apply for Visa</a>
           <a href="/about" style={{ color: '#ccc', fontSize: '14px' }}>About Us</a>
-          <a href="#faq" style={{ color: '#ccc', fontSize: '14px' }}>FAQ</a>
+          <a href="/faq" style={{ color: '#ccc', fontSize: '14px' }}>FAQ</a>
           <a href="#contact" style={{
             background: '#ff7600',
             color: '#17206c',
@@ -77,7 +77,7 @@ export default function Navbar() {
           {/* <a href="#world" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>World Tours</a>  */}
           <a href="#visa" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>Apply for Visa</a>
           <a href="/about" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>About Us</a>
-          <a href="#faq" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>FAQ</a>
+          <a href="/faq" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>FAQ</a>
           <a href="#contact" onClick={() => setMenuOpen(false)} style={{
             background: '#ff7600',
             color: '#17206c',
