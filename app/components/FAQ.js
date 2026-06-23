@@ -144,7 +144,7 @@ export default function FAQ() {
 
       {/* Hero */}
       <div style={{
-        background: 'linear-gradient(135deg, #17206c 0%, #0a0a1a 100%)',
+        background: 'linear-gradient(135deg, #17206c 0%, #17206c 100%)',
         padding: '70px 20px 80px',
         textAlign: 'center',
         position: 'relative',
@@ -155,7 +155,7 @@ export default function FAQ() {
           backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(245,131,15,0.12) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(40,191,241,0.1) 0%, transparent 50%)',
           pointerEvents: 'none'
         }} />
-        <p style={{ color: '#f5830f', fontWeight: '700', fontSize: '12px', letterSpacing: '3px', marginBottom: '14px' }}>
+        <p style={{ color: '#ff7600', fontWeight: '700', fontSize: '12px', letterSpacing: '3px', marginBottom: '14px' }}>
           HELP CENTER
         </p>
         <h1 style={{
@@ -193,8 +193,8 @@ export default function FAQ() {
                   style={{
                     padding: '9px 18px',
                     borderRadius: '24px',
-                    border: `2px solid ${active ? '#f5830f' : '#c8d0e8'}`,
-                    background: active ? '#f5830f' : '#ffffff',
+                    border: `2px solid ${active ? '#ff7600' : '#c8d0e8'}`,
+                    background: active ? '#ff7600' : '#ffffff',
                     color: active ? '#ffffff' : '#17206c',
                     fontWeight: '600',
                     fontSize: '13px',
@@ -232,7 +232,7 @@ export default function FAQ() {
                     background: '#ffffff',
                     borderRadius: '14px',
                     overflow: 'hidden',
-                    border: open ? '2px solid #f5830f' : '1.5px solid #dde4f0',
+                    border: open ? '2px solid #ff7600' : '1.5px solid #dde4f0',
                     boxShadow: open
                       ? '0 8px 30px rgba(245,131,15,0.12)'
                       : '0 2px 8px rgba(23,32,108,0.05)',
@@ -259,7 +259,7 @@ export default function FAQ() {
                         width: '28px',
                         height: '28px',
                         borderRadius: '50%',
-                        background: open ? '#f5830f' : '#e8eef8',
+                        background: open ? '#ff7600' : '#e8eef8',
                         color: open ? '#fff' : '#17206c',
                         display: 'flex',
                         alignItems: 'center',
@@ -273,7 +273,7 @@ export default function FAQ() {
                       <span style={{
                         fontSize: '15px',
                         fontWeight: '600',
-                        color: open ? '#f5830f' : '#17206c',
+                        color: open ? '#ff7600' : '#17206c',
                         lineHeight: '1.55',
                         transition: 'color 0.2s'
                       }}>
@@ -284,11 +284,11 @@ export default function FAQ() {
                       width: '30px',
                       height: '30px',
                       borderRadius: '50%',
-                      border: `2px solid ${open ? '#f5830f' : '#c8d0e8'}`,
+                      border: `2px solid ${open ? '#ff7600' : '#c8d0e8'}`,
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: open ? '#f5830f' : '#888',
+                      color: open ? '#ff7600' : '#888',
                       fontSize: '18px',
                       fontWeight: '700',
                       flexShrink: 0,
@@ -323,7 +323,7 @@ export default function FAQ() {
             textAlign: 'center',
             marginTop: '60px',
             padding: '44px 36px',
-            background: 'linear-gradient(135deg, #17206c 0%, #0a0a1a 100%)',
+            background: 'linear-gradient(135deg, #17206c 0%, #17206c 100%)',
             borderRadius: '20px',
             position: 'relative',
             overflow: 'hidden'
@@ -334,7 +334,7 @@ export default function FAQ() {
               pointerEvents: 'none'
             }} />
             <div style={{ fontSize: '40px', marginBottom: '14px' }}>🤝</div>
-            <p style={{ color: '#f5830f', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', marginBottom: '10px' }}>
+            <p style={{ color: '#ff7600', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', marginBottom: '10px' }}>
               STILL HAVE QUESTIONS?
             </p>
             <h3 style={{ color: '#ffffff', fontSize: '24px', fontWeight: '800', marginBottom: '10px' }}>
@@ -359,7 +359,7 @@ export default function FAQ() {
                 💬 WhatsApp Us
               </a>
               <a href="/#contact" style={{
-                background: '#f5830f',
+                background: '#ff7600',
                 color: '#fff',
                 padding: '13px 26px',
                 borderRadius: '10px',

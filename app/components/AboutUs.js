@@ -11,10 +11,10 @@ export default function AboutUs() {
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
         <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-          <p style={{ color: '#f5a623', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
+          <p style={{ color: '#ff7600', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
             WHO WE ARE
           </p>
-          <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#0a0a1a', marginTop: '8px' }}>
+          <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#17206c', marginTop: '8px' }}>
             About ZIP Travels
           </h2>
         </div>
@@ -30,7 +30,7 @@ export default function AboutUs() {
 
           {/* Left - Image placeholder */}
           <div style={{
-            background: '#0a0a1a',
+            background: '#17206c',
             borderRadius: '16px',
             height: '380px',
             display: 'flex',
@@ -38,10 +38,10 @@ export default function AboutUs() {
             justifyContent: 'center',
             flexDirection: 'column',
             gap: '12px',
-            border: '2px solid #f5a623'
+            border: '2px solid #ff7600'
           }}>
             <span style={{ fontSize: '60px' }}>✈️</span>
-            <p style={{ color: '#f5a623', fontWeight: '700', fontSize: '18px' }}>ZIP TRAVELS</p>
+            <p style={{ color: '#ff7600', fontWeight: '700', fontSize: '18px' }}>ZIP TRAVELS</p>
             <p style={{ color: '#aaa', fontSize: '13px' }}>Your Travel Partner</p>
           </div>
 
@@ -50,7 +50,7 @@ export default function AboutUs() {
             <h3 style={{
               fontSize: '24px',
               fontWeight: '700',
-              color: '#0a0a1a',
+              color: '#17206c',
               marginBottom: '16px',
               lineHeight: '1.4'
             }}>
@@ -92,15 +92,15 @@ export default function AboutUs() {
                   textAlign: 'center',
                   border: '1px solid #eee'
                 }}>
-                  <div style={{ color: '#f5a623', fontSize: '24px', fontWeight: '700' }}>{stat.num}</div>
+                  <div style={{ color: '#ff7600', fontSize: '24px', fontWeight: '700' }}>{stat.num}</div>
                   <div style={{ color: '#777', fontSize: '12px', marginTop: '4px' }}>{stat.label}</div>
                 </div>
               ))}
             </div>
 
             <a href="#contact" style={{
-              background: '#f5a623',
-              color: '#0a0a1a',
+              background: '#ff7600',
+              color: '#17206c',
               padding: '14px 28px',
               borderRadius: '8px',
               fontWeight: '700',
@@ -124,13 +124,13 @@ export default function AboutUs() {
               background: '#f9f9f9',
               borderRadius: '12px',
               padding: '28px',
-              borderTop: '4px solid #f5a623'
+              borderTop: '4px solid #ff7600'
             }}>
               <div style={{ fontSize: '36px', marginBottom: '14px' }}>{val.icon}</div>
               <h4 style={{
                 fontSize: '16px',
                 fontWeight: '700',
-                color: '#0a0a1a',
+                color: '#17206c',
                 marginBottom: '8px'
               }}>
                 {val.title}

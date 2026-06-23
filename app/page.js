@@ -16,7 +16,6 @@ export default function Home() {
       <SriLankaTours />
       <VisaSection />
       <Contact />
-
       <Footer />
       <WhatsAppButton />
       

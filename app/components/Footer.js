@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer style={{ background: '#050510', padding: '60px 20px 20px', borderTop: '1px solid #1a1a2e' }}>
+    <footer style={{ background: '#17206c', padding: '60px 20px 20px', borderTop: '1px solid #17206c' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
         {/* Top Grid */}
@@ -13,7 +13,7 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div style={{ color: '#f5a623', fontSize: '22px', fontWeight: '700', marginBottom: '14px' }}>
+            <div style={{ color: '#ff7600', fontSize: '22px', fontWeight: '700', marginBottom: '14px' }}>
               ✈ ZIP TRAVELS
             </div>
             <p style={{ color: '#aaa', fontSize: '14px', lineHeight: '1.8', marginBottom: '20px' }}>
@@ -27,8 +27,8 @@ export default function Footer() {
               ].map(s => (
                 <a key={s.label} href={s.link} style={{
                   background: 'rgba(245,166,35,0.1)',
-                  border: '1px solid #f5a623',
-                  color: '#f5a623',
+                  border: '1px solid #ff7600',
+                  color: '#ff7600',
                   padding: '6px 14px',
                   borderRadius: '6px',
                   fontSize: '12px',
@@ -103,7 +103,7 @@ export default function Footer() {
                   <div>
                     <p style={{ color: '#666', fontSize: '11px' }}>{item.label}</p>
                     {item.link ? (
-                      <a href={item.link} style={{ color: '#f5a623', fontSize: '13px', fontWeight: '600' }}>
+                      <a href={item.link} style={{ color: '#ff7600', fontSize: '13px', fontWeight: '600' }}>
                         {item.value}
                       </a>
                     ) : (
@@ -119,7 +119,7 @@ export default function Footer() {
 
         {/* SEO Keywords Row */}
         <div style={{
-          borderTop: '1px solid #1a1a2e',
+          borderTop: '1px solid #17206c',
           paddingTop: '30px',
           marginBottom: '30px'
         }}>
@@ -133,7 +133,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div style={{
-          borderTop: '1px solid #1a1a2e',
+          borderTop: '1px solid #17206c',
           paddingTop: '20px',
           display: 'flex',
           justifyContent: 'space-between',

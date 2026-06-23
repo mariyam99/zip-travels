@@ -44,17 +44,17 @@ export default function Contact() {
   const labelStyle = {
     fontSize: '13px',
     fontWeight: '600',
-    color: '#0a0a1a',
+    color: '#17206c',
     marginBottom: '6px',
     display: 'block'
   }
 
   return (
-    <section id="contact" style={{ background: '#0a0a1a', padding: '70px 20px' }}>
+    <section id="contact" style={{ background: '#17206c', padding: '70px 20px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
         <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-          <p style={{ color: '#f5a623', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
+          <p style={{ color: '#ff7600', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
             GET IN TOUCH
           </p>
           <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#ffffff', marginTop: '8px' }}>
@@ -92,7 +92,7 @@ export default function Contact() {
               }}>
                 <div style={{
                   background: 'rgba(245,166,35,0.15)',
-                  border: '1px solid #f5a623',
+                  border: '1px solid #ff7600',
                   borderRadius: '10px',
                   width: '46px',
                   height: '46px',
@@ -107,7 +107,7 @@ export default function Contact() {
                 <div>
                   <p style={{ color: '#aaa', fontSize: '12px', marginBottom: '4px' }}>{item.label}</p>
                   {item.link ? (
-                    <a href={item.link} style={{ color: '#f5a623', fontSize: '15px', fontWeight: '600' }}>
+                    <a href={item.link} style={{ color: '#ff7600', fontSize: '15px', fontWeight: '600' }}>
                       {item.value}
                     </a>
                   ) : (
@@ -128,8 +128,8 @@ export default function Contact() {
                 ].map(s => (
                   <a key={s.label} href={s.link} style={{
                     background: 'rgba(245,166,35,0.15)',
-                    border: '1px solid #f5a623',
-                    color: '#f5a623',
+                    border: '1px solid #ff7600',
+                    color: '#ff7600',
                     padding: '8px 16px',
                     borderRadius: '8px',
                     fontSize: '13px',
@@ -170,7 +170,7 @@ export default function Contact() {
                 textAlign: 'center'
               }}>
                 <div style={{ fontSize: '50px', marginBottom: '16px' }}>✅</div>
-                <h3 style={{ color: '#0a0a1a', fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>
+                <h3 style={{ color: '#17206c', fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>
                   Message Received!
                 </h3>
                 <p style={{ color: '#777', fontSize: '15px' }}>
@@ -267,8 +267,8 @@ export default function Contact() {
                     type="submit"
                     disabled={loading}
                     style={{
-                      background: '#f5a623',
-                      color: '#0a0a1a',
+                      background: '#ff7600',
+                      color: '#17206c',
                       padding: '14px',
                       borderRadius: '8px',
                       border: 'none',

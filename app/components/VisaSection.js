@@ -88,7 +88,7 @@ export default function VisaSection() {
   const labelStyle = {
     fontSize: '13px',
     fontWeight: '600',
-    color: '#0a0a1a',
+    color: '#17206c',
     marginBottom: '6px',
     display: 'block'
   }
@@ -98,10 +98,10 @@ export default function VisaSection() {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
 
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <p style={{ color: '#f5a623', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
+          <p style={{ color: '#ff7600', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
             WORLDWIDE VISA ASSISTANCE
           </p>
-          <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#0a0a1a', marginTop: '8px' }}>
+          <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#17206c', marginTop: '8px' }}>
             Apply for Any Country Visa
           </h2>
           <p style={{ color: '#777', marginTop: '12px', fontSize: '15px' }}>
@@ -113,12 +113,12 @@ export default function VisaSection() {
             {['🇱🇰 Sri Lanka', '🇦🇪 Dubai', '🇪🇺 Schengen', '🇬🇧 UK', '🇺🇸 USA', '🇦🇺 Australia'].map(v => (
               <span key={v} style={{
                 background: '#fff3e0',
-                color: '#f5a623',
+                color: '#ff7600',
                 fontSize: '12px',
                 fontWeight: '600',
                 padding: '5px 12px',
                 borderRadius: '20px',
-                border: '1px solid #f5a623'
+                border: '1px solid #ff7600'
               }}>{v}</span>
             ))}
           </div>
@@ -133,7 +133,7 @@ export default function VisaSection() {
             boxShadow: '0 2px 12px rgba(0,0,0,0.08)'
           }}>
             <div style={{ fontSize: '50px', marginBottom: '16px' }}>✅</div>
-            <h3 style={{ color: '#0a0a1a', fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>
+            <h3 style={{ color: '#17206c', fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>
               Application Received!
             </h3>
             <p style={{ color: '#777', fontSize: '15px', marginBottom: '20px' }}>
@@ -306,8 +306,8 @@ export default function VisaSection() {
               style={{
                 marginTop: '24px',
                 width: '100%',
-                background: '#f5a623',
-                color: '#0a0a1a',
+                background: '#ff7600',
+                color: '#17206c',
                 padding: '14px',
                 borderRadius: '8px',
                 border: 'none',

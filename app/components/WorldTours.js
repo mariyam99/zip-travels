@@ -13,10 +13,10 @@ export default function WorldTours() {
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <p style={{ color: '#f5a623', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
+          <p style={{ color: '#ff7600', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
             WORLDWIDE HOLIDAYS
           </p>
-          <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#0a0a1a', marginTop: '8px' }}>
+          <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#17206c', marginTop: '8px' }}>
             Around The World Tours
           </h2>
           <p style={{ color: '#777', marginTop: '12px', fontSize: '15px' }}>
@@ -31,13 +31,13 @@ export default function WorldTours() {
         }}>
           {destinations.map((dest) => (
             <div key={dest.title} style={{
-              background: '#0a0a1a',
+              background: '#17206c',
               borderRadius: '12px',
               padding: '28px',
               display: 'flex',
               gap: '18px',
               alignItems: 'flex-start',
-              border: '1px solid #1a1a2e'
+              border: '1px solid #17206c'
             }}>
               <div style={{
                 fontSize: '40px',
@@ -54,7 +54,7 @@ export default function WorldTours() {
               </div>
               <div>
                 <span style={{
-                  color: '#f5a623',
+                  color: '#ff7600',
                   fontSize: '11px',
                   fontWeight: '600',
                   letterSpacing: '1px'
@@ -83,15 +83,15 @@ export default function WorldTours() {
                   alignItems: 'center'
                 }}>
                   <span style={{
-                    color: '#f5a623',
+                    color: '#ff7600',
                     fontWeight: '700',
                     fontSize: '15px'
                   }}>
                     {dest.price}
                   </span>
                   <a href="#contact" style={{
-                    border: '1px solid #f5a623',
-                    color: '#f5a623',
+                    border: '1px solid #ff7600',
+                    color: '#ff7600',
                     padding: '6px 14px',
                     borderRadius: '6px',
                     fontSize: '12px',

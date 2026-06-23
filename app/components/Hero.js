@@ -110,7 +110,7 @@ export default function Hero() {
         }}>
           <a href="#srilanka" style={{
             background: '#ff7600',
-            color: '#0a0a1a',
+            color: '#17206c',
             padding: '14px 28px',
             borderRadius: '8px',
             fontSize: '15px',

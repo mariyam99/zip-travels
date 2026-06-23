@@ -30,10 +30,10 @@ export default function SriLankaTours() {
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
 
         <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-          <p style={{ color: '#f5a623', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
+          <p style={{ color: '#ff7600', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
             EXPLORE SRI LANKA
           </p>
-          <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#0a0a1a', marginTop: '8px' }}>
+          <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#17206c', marginTop: '8px' }}>
             Sri Lanka Tour Packages
           </h2>
           <p style={{ color: '#777', marginTop: '12px', fontSize: '15px' }}>
@@ -56,9 +56,9 @@ export default function SriLankaTours() {
               style={{
                 padding: '8px 20px',
                 borderRadius: '20px',
-                border: '2px solid #f5a623',
-                background: active === cat ? '#f5a623' : 'transparent',
-                color: active === cat ? '#0a0a1a' : '#f5a623',
+                border: '2px solid #ff7600',
+                background: active === cat ? '#ff7600' : 'transparent',
+                color: active === cat ? '#17206c' : '#ff7600',
                 fontWeight: '600',
                 fontSize: '13px',
                 cursor: 'pointer'
@@ -89,7 +89,7 @@ export default function SriLankaTours() {
                 transition: 'transform 0.2s',
               }}>
                 <div style={{
-                  background: '#0a0a1a',
+                  background: '#17206c',
                   height: '180px',
                   display: 'flex',
                   alignItems: 'center',
@@ -105,7 +105,7 @@ export default function SriLankaTours() {
                 <div style={{ padding: '18px' }}>
                   <span style={{
                     background: '#fff3e0',
-                    color: '#f5a623',
+                    color: '#ff7600',
                     fontSize: '11px',
                     fontWeight: '600',
                     padding: '3px 10px',
@@ -116,7 +116,7 @@ export default function SriLankaTours() {
                   <h3 style={{
                     fontSize: '17px',
                     fontWeight: '700',
-                    color: '#0a0a1a',
+                    color: '#17206c',
                     margin: '10px 0 6px'
                   }}>
                     {pkg.title}
@@ -130,14 +130,14 @@ export default function SriLankaTours() {
                     alignItems: 'center'
                   }}>
                     <span style={{
-                      color: '#f5a623',
+                      color: '#ff7600',
                       fontWeight: '700',
                       fontSize: '18px'
                     }}>
                       ${pkg.price}
                     </span>
                     <a href="#contact" style={{
-                      background: '#0a0a1a',
+                      background: '#17206c',
                       color: '#fff',
                       padding: '8px 16px',
                       borderRadius: '6px',
