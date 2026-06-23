@@ -25,7 +25,7 @@ const faqs = [
   {
     category: 'Sri Lanka Tours',
     q: 'What are the best places to visit in Sri Lanka?',
-    a: 'Sri Lanka\'s top destinations include Sigiriya Rock Fortress, Yala National Park, Kandy Temple of the Tooth, Ella, Galle Fort, Mirissa Beach, Nuwara Eliya tea plantations and Polonnaruwa ancient city. ZIP Travels covers all these destinations with expert local guides.'
+    a: "Sri Lanka's top destinations include Sigiriya Rock Fortress, Yala National Park, Kandy Temple of the Tooth, Ella, Galle Fort, Mirissa Beach, Nuwara Eliya tea plantations and Polonnaruwa ancient city. ZIP Travels covers all these destinations with expert local guides."
   },
   {
     category: 'Sri Lanka Tours',
@@ -104,7 +104,24 @@ const faqs = [
   },
 ]
 
-const categories = ['All', 'Booking', 'Sri Lanka Tours', 'World Tours', 'Visa Assistance', 'General']
+const categories = [
+  { label: 'All', icon: '🌐' },
+  { label: 'Booking', icon: '📅' },
+  { label: 'Sri Lanka Tours', icon: '🇱🇰' },
+  { label: 'World Tours', icon: '✈️' },
+  { label: 'Visa Assistance', icon: '🛂' },
+  { label: 'General', icon: '💡' },
+]
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+}
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)
@@ -119,146 +136,266 @@ export default function FAQ() {
     : faqs.filter(f => f.category === activeCategory)
 
   return (
-    <section id="faq" style={{ background: '#f0f4ff', padding: '70px 20px' }}>
-      <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
-        {/* Category Filter */}
+      {/* Hero */}
+      <div style={{
+        background: 'linear-gradient(135deg, #17206c 0%, #0a0a1a 100%)',
+        padding: '70px 20px 80px',
+        textAlign: 'center',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
         <div style={{
-          display: 'flex',
-          gap: '10px',
-          justifyContent: 'center',
-          flexWrap: 'wrap',
-          marginBottom: '36px'
+          position: 'absolute', inset: 0,
+          backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(245,131,15,0.12) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(40,191,241,0.1) 0%, transparent 50%)',
+          pointerEvents: 'none'
+        }} />
+        <p style={{ color: '#f5830f', fontWeight: '700', fontSize: '12px', letterSpacing: '3px', marginBottom: '14px' }}>
+          HELP CENTER
+        </p>
+        <h1 style={{
+          color: '#ffffff',
+          fontSize: 'clamp(28px, 5vw, 48px)',
+          fontWeight: '800',
+          lineHeight: '1.2',
+          marginBottom: '16px'
         }}>
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => { setActiveCategory(cat); setOpenIndex(null) }}
-              style={{
-                padding: '8px 18px',
-                borderRadius: '20px',
-                border: '2px solid #f5830f',
-                background: activeCategory === cat ? '#f5830f' : 'transparent',
-                color: activeCategory === cat ? '#ffffff' : '#f5830f',
-                fontWeight: '600',
-                fontSize: '13px',
-                cursor: 'pointer',
-                transition: 'all 0.2s'
-              }}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* FAQ Items */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          {filtered.map((faq, i) => (
-            <div
-              key={i}
-              style={{
-                background: '#ffffff',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                border: openIndex === i ? '2px solid #f5830f' : '1px solid #d0d8f0',
-                transition: 'border 0.2s',
-                boxShadow: openIndex === i ? '0 4px 20px rgba(245,131,15,0.1)' : '0 2px 8px rgba(23,32,108,0.06)'
-              }}
-            >
-              <button
-                onClick={() => toggle(i)}
-                style={{
-                  width: '100%',
-                  padding: '20px 24px',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  background: openIndex === i ? 'rgba(245,131,15,0.04)' : 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  gap: '16px'
-                }}
-              >
-                <span style={{
-                  fontSize: '15px',
-                  fontWeight: '600',
-                  color: '#17206c',
-                  lineHeight: '1.5'
-                }}>
-                  {faq.q}
-                </span>
-                <span style={{
-                  color: '#f5830f',
-                  fontSize: '22px',
-                  fontWeight: '700',
-                  flexShrink: 0
-                }}>
-                  {openIndex === i ? '−' : '+'}
-                </span>
-              </button>
-
-              {openIndex === i && (
-                <div style={{
-                  padding: '0 24px 20px',
-                  borderTop: '1px solid #e8eef8'
-                }}>
-                  <p style={{
-                    paddingTop: '16px',
-                    color: '#444',
-                    fontSize: '14px',
-                    lineHeight: '1.9'
-                  }}>
-                    {faq.a}
-                  </p>
-                </div>
-              )}
+          Frequently Asked Questions
+        </h1>
+        <p style={{ color: '#aab', fontSize: '16px', maxWidth: '540px', margin: '0 auto 28px', lineHeight: '1.7' }}>
+          Everything you need to know about ZIP Travels — Sri Lanka tours, worldwide holidays, visa assistance and bookings.
+        </p>
+        <div style={{
+          display: 'inline-flex',
+          gap: '24px',
+          background: 'rgba(255,255,255,0.07)',
+          borderRadius: '12px',
+          padding: '14px 28px',
+          border: '1px solid rgba(255,255,255,0.1)'
+        }}>
+          {[
+            { num: `${faqs.length}+`, label: 'Questions Answered' },
+            { num: '5', label: 'Categories' },
+            { num: '24/7', label: 'Support Available' },
+          ].map(s => (
+            <div key={s.label} style={{ textAlign: 'center' }}>
+              <div style={{ color: '#f5830f', fontWeight: '800', fontSize: '20px' }}>{s.num}</div>
+              <div style={{ color: '#aab', fontSize: '11px', marginTop: '2px' }}>{s.label}</div>
             </div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <div style={{
-          textAlign: 'center',
-          marginTop: '50px',
-          padding: '36px',
-          background: '#17206c',
-          borderRadius: '16px'
-        }}>
-          <p style={{ color: '#28bff1', fontSize: '13px', fontWeight: '600', letterSpacing: '1px', marginBottom: '10px' }}>
-            STILL HAVE QUESTIONS?
-          </p>
-          <h3 style={{ color: '#ffffff', fontSize: '22px', fontWeight: '700', marginBottom: '10px' }}>
-            We are here to help
-          </h3>
-          <p style={{ color: '#aaa', fontSize: '14px', marginBottom: '24px' }}>
-            Contact our team directly via WhatsApp or email — available 24/7
-          </p>
-          <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="https://wa.me/94777857626" style={{
-              background: '#25D366',
-              color: '#fff',
-              padding: '12px 24px',
-              borderRadius: '8px',
-              fontWeight: '700',
-              fontSize: '14px'
-            }}>
-              💬 WhatsApp Us
-            </a>
-            <a href="/#contact" style={{
-              background: '#f5830f',
-              color: '#fff',
-              padding: '12px 24px',
-              borderRadius: '8px',
-              fontWeight: '700',
-              fontSize: '14px'
-            }}>
-              📧 Send a Message
-            </a>
-          </div>
-        </div>
-
       </div>
-    </section>
+
+      <section style={{ background: '#f0f4ff', padding: '60px 20px 80px' }}>
+        <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+
+          {/* Category Filter */}
+          <div style={{
+            display: 'flex',
+            gap: '10px',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+            marginBottom: '40px'
+          }}>
+            {categories.map(cat => {
+              const count = cat.label === 'All' ? faqs.length : faqs.filter(f => f.category === cat.label).length
+              const active = activeCategory === cat.label
+              return (
+                <button
+                  key={cat.label}
+                  onClick={() => { setActiveCategory(cat.label); setOpenIndex(null) }}
+                  style={{
+                    padding: '9px 18px',
+                    borderRadius: '24px',
+                    border: `2px solid ${active ? '#f5830f' : '#c8d0e8'}`,
+                    background: active ? '#f5830f' : '#ffffff',
+                    color: active ? '#ffffff' : '#17206c',
+                    fontWeight: '600',
+                    fontSize: '13px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    boxShadow: active ? '0 4px 14px rgba(245,131,15,0.3)' : 'none',
+                    transition: 'all 0.2s'
+                  }}
+                >
+                  <span>{cat.icon}</span>
+                  {cat.label}
+                  <span style={{
+                    background: active ? 'rgba(255,255,255,0.25)' : '#e8eef8',
+                    color: active ? '#fff' : '#17206c',
+                    borderRadius: '10px',
+                    padding: '1px 7px',
+                    fontSize: '11px',
+                    fontWeight: '700'
+                  }}>{count}</span>
+                </button>
+              )
+            })}
+          </div>
+
+          {/* FAQ Items */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            {filtered.map((faq, i) => {
+              const open = openIndex === i
+              return (
+                <div
+                  key={i}
+                  style={{
+                    background: '#ffffff',
+                    borderRadius: '14px',
+                    overflow: 'hidden',
+                    border: open ? '2px solid #f5830f' : '1.5px solid #dde4f0',
+                    boxShadow: open
+                      ? '0 8px 30px rgba(245,131,15,0.12)'
+                      : '0 2px 8px rgba(23,32,108,0.05)',
+                    transition: 'all 0.25s ease'
+                  }}
+                >
+                  <button
+                    onClick={() => toggle(i)}
+                    style={{
+                      width: '100%',
+                      padding: '20px 24px',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      background: open ? 'rgba(245,131,15,0.04)' : 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      gap: '16px'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', flex: 1 }}>
+                      <span style={{
+                        width: '28px',
+                        height: '28px',
+                        borderRadius: '50%',
+                        background: open ? '#f5830f' : '#e8eef8',
+                        color: open ? '#fff' : '#17206c',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '12px',
+                        fontWeight: '800',
+                        flexShrink: 0,
+                        marginTop: '2px',
+                        transition: 'all 0.2s'
+                      }}>Q</span>
+                      <span style={{
+                        fontSize: '15px',
+                        fontWeight: '600',
+                        color: open ? '#f5830f' : '#17206c',
+                        lineHeight: '1.55',
+                        transition: 'color 0.2s'
+                      }}>
+                        {faq.q}
+                      </span>
+                    </div>
+                    <span style={{
+                      width: '30px',
+                      height: '30px',
+                      borderRadius: '50%',
+                      border: `2px solid ${open ? '#f5830f' : '#c8d0e8'}`,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: open ? '#f5830f' : '#888',
+                      fontSize: '18px',
+                      fontWeight: '700',
+                      flexShrink: 0,
+                      transition: 'all 0.2s'
+                    }}>
+                      {open ? '−' : '+'}
+                    </span>
+                  </button>
+
+                  {open && (
+                    <div style={{
+                      padding: '0 24px 22px 66px',
+                      borderTop: '1px solid #f0f4ff'
+                    }}>
+                      <p style={{
+                        paddingTop: '14px',
+                        color: '#555',
+                        fontSize: '14px',
+                        lineHeight: '1.9'
+                      }}>
+                        {faq.a}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Bottom CTA */}
+          <div style={{
+            textAlign: 'center',
+            marginTop: '60px',
+            padding: '44px 36px',
+            background: 'linear-gradient(135deg, #17206c 0%, #0a0a1a 100%)',
+            borderRadius: '20px',
+            position: 'relative',
+            overflow: 'hidden'
+          }}>
+            <div style={{
+              position: 'absolute', inset: 0,
+              backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(245,131,15,0.15) 0%, transparent 60%)',
+              pointerEvents: 'none'
+            }} />
+            <div style={{ fontSize: '40px', marginBottom: '14px' }}>🤝</div>
+            <p style={{ color: '#f5830f', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', marginBottom: '10px' }}>
+              STILL HAVE QUESTIONS?
+            </p>
+            <h3 style={{ color: '#ffffff', fontSize: '24px', fontWeight: '800', marginBottom: '10px' }}>
+              We are here to help — 24/7
+            </h3>
+            <p style={{ color: '#9aa', fontSize: '14px', marginBottom: '28px', maxWidth: '400px', margin: '0 auto 28px', lineHeight: '1.7' }}>
+              Our travel experts are available around the clock via WhatsApp or email to answer any question you have.
+            </p>
+            <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <a href="https://wa.me/94777857626" style={{
+                background: '#25D366',
+                color: '#fff',
+                padding: '13px 26px',
+                borderRadius: '10px',
+                fontWeight: '700',
+                fontSize: '14px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 4px 16px rgba(37,211,102,0.35)'
+              }}>
+                💬 WhatsApp Us
+              </a>
+              <a href="/#contact" style={{
+                background: '#f5830f',
+                color: '#fff',
+                padding: '13px 26px',
+                borderRadius: '10px',
+                fontWeight: '700',
+                fontSize: '14px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 4px 16px rgba(245,131,15,0.35)'
+              }}>
+                📧 Send a Message
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </>
   )
 }
