@@ -167,28 +167,9 @@ export default function FAQ() {
         }}>
           Frequently Asked Questions
         </h1>
-        <p style={{ color: '#aab', fontSize: '16px', maxWidth: '540px', margin: '0 auto 28px', lineHeight: '1.7' }}>
+        <p style={{ color: '#aab', fontSize: '16px', maxWidth: '540px', margin: '0 auto', lineHeight: '1.7' }}>
           Everything you need to know about ZIP Travels — Sri Lanka tours, worldwide holidays, visa assistance and bookings.
         </p>
-        <div style={{
-          display: 'inline-flex',
-          gap: '24px',
-          background: 'rgba(255,255,255,0.07)',
-          borderRadius: '12px',
-          padding: '14px 28px',
-          border: '1px solid rgba(255,255,255,0.1)'
-        }}>
-          {[
-            { num: `${faqs.length}+`, label: 'Questions Answered' },
-            { num: '5', label: 'Categories' },
-            { num: '24/7', label: 'Support Available' },
-          ].map(s => (
-            <div key={s.label} style={{ textAlign: 'center' }}>
-              <div style={{ color: '#f5830f', fontWeight: '800', fontSize: '20px' }}>{s.num}</div>
-              <div style={{ color: '#aab', fontSize: '11px', marginTop: '2px' }}>{s.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
 
       <section style={{ background: '#f0f4ff', padding: '60px 20px 80px' }}>
