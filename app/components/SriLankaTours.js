@@ -75,6 +75,59 @@ export default function SriLankaTours() {
           gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
           gap: '24px'
         }}>
+
+          {/* Static Day Tour Card */}
+          {(active === 'All' || active === 'Cultural') && (
+            <div style={{
+              background: '#fff',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+              transition: 'transform 0.2s',
+            }}>
+              <div style={{
+                background: '#17206c',
+                height: '180px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '48px'
+              }}>🏛️</div>
+              <div style={{ padding: '18px' }}>
+                <span style={{
+                  background: '#fff3e0',
+                  color: '#ff7600',
+                  fontSize: '11px',
+                  fontWeight: '600',
+                  padding: '3px 10px',
+                  borderRadius: '20px'
+                }}>Cultural · Day Tour</span>
+                <h3 style={{
+                  fontSize: '17px',
+                  fontWeight: '700',
+                  color: '#17206c',
+                  margin: '10px 0 6px'
+                }}>
+                  Explore Sigiriya & Dambulla – Day Tour from Kandy
+                </h3>
+                <p style={{ color: '#777', fontSize: '13px', marginBottom: '14px' }}>
+                  10–12 Hours · UNESCO Heritage · Lunch Included
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ color: '#ff7600', fontWeight: '700', fontSize: '18px' }}>From $100</span>
+                  <a href="/tours/sigiriya-dambulla-day-tour" style={{
+                    background: '#17206c',
+                    color: '#fff',
+                    padding: '8px 16px',
+                    borderRadius: '6px',
+                    fontSize: '13px',
+                    fontWeight: '600'
+                  }}>Book Now</a>
+                </div>
+              </div>
+            </div>
+          )}
+
           {filtered.length === 0 ? (
             <p style={{ color: '#aaa', textAlign: 'center', gridColumn: '1/-1' }}>
               No packages found. Add some in your Supabase dashboard.
