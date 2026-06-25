@@ -4,6 +4,7 @@ import SriLankaTours from './components/SriLankaTours'
 // import WorldTours from './components/WorldTours'
 import VisaSection from './components/VisaSection'
 import Contact from './components/Contact'
+import Licenses from './components/Licenses'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 
@@ -16,6 +17,7 @@ export default function Home() {
       <SriLankaTours />
       <VisaSection />
       <Contact />
+      <Licenses />
       <Footer />
       <WhatsAppButton />
       
