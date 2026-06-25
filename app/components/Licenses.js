@@ -1,3 +1,5 @@
+'use client'
+
 const licenses = [
   {
     name: 'Sri Lanka Tourism Development Authority',
