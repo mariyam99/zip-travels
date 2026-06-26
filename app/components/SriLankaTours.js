@@ -85,14 +85,18 @@ export default function SriLankaTours() {
               boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
               transition: 'transform 0.2s',
             }}>
-              <div style={{
-                background: '#17206c',
-                height: '180px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '48px'
-              }}>🏛️</div>
+              <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+                <img
+                  src="/images/sigiriya.jpg"
+                  alt="Sigiriya & Dambulla Day Tour"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  onError={e => {
+                    e.currentTarget.style.display = 'none'
+                    e.currentTarget.parentElement.style.background = '#17206c'
+                    e.currentTarget.parentElement.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;font-size:48px">🏛️</div>'
+                  }}
+                />
+              </div>
               <div style={{ padding: '18px' }}>
                 <span style={{
                   background: '#fff3e0',
@@ -141,19 +145,22 @@ export default function SriLankaTours() {
                 boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
                 transition: 'transform 0.2s',
               }}>
-                <div style={{
-                  background: '#17206c',
-                  height: '180px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '48px'
-                }}>
-                  {pkg.category === 'Cultural' ? '🏛️' :
-                   pkg.category === 'Wildlife' ? '🐘' :
-                   pkg.category === 'Beach' ? '🏖️' :
-                   pkg.category === 'Adventure' ? '🧗' :
-                   pkg.category === 'Honeymoon' ? '💑' : '✈️'}
+                <div style={{ height: '200px', overflow: 'hidden', position: 'relative', background: '#17206c' }}>
+                  {pkg.image_url ? (
+                    <img
+                      src={pkg.image_url}
+                      alt={pkg.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  ) : (
+                    <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '48px' }}>
+                      {pkg.category === 'Cultural' ? '🏛️' :
+                       pkg.category === 'Wildlife' ? '🐘' :
+                       pkg.category === 'Beach' ? '🏖️' :
+                       pkg.category === 'Adventure' ? '🧗' :
+                       pkg.category === 'Honeymoon' ? '💑' : '✈️'}
+                    </div>
+                  )}
                 </div>
                 <div style={{ padding: '18px' }}>
                   <span style={{

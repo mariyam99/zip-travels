@@ -60,15 +60,19 @@ export default function TourContent() {
 
       {/* Hero */}
       <div style={{
-        background: 'linear-gradient(135deg, #17206c 0%, #0d1445 100%)',
-        padding: '70px 20px 80px',
-        textAlign: 'center',
         position: 'relative',
-        overflow: 'hidden'
+        padding: '100px 20px 90px',
+        textAlign: 'center',
+        overflow: 'hidden',
+        backgroundImage: 'url(/images/sigiriya-hero.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}>
+        {/* Dark overlay */}
         <div style={{
           position: 'absolute', inset: 0,
-          backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(255,118,0,0.12) 0%, transparent 55%), radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 50%)',
+          background: 'linear-gradient(135deg, rgba(10,15,50,0.88) 0%, rgba(5,8,30,0.92) 100%)',
           pointerEvents: 'none'
         }} />
         <p style={{ color: '#ff7600', fontWeight: '700', fontSize: '12px', letterSpacing: '3px', marginBottom: '14px' }}>
