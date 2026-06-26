@@ -71,48 +71,53 @@ export default function TourContent() {
       }}>
         {/* Dark overlay */}
         <div style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(135deg, rgba(10,15,50,0.88) 0%, rgba(5,8,30,0.92) 100%)',
+          position: 'absolute', inset: 0, zIndex: 1,
+          background: 'linear-gradient(135deg, rgba(10,15,50,0.78) 0%, rgba(5,8,30,0.85) 100%)',
           pointerEvents: 'none'
         }} />
-        <p style={{ color: '#ff7600', fontWeight: '700', fontSize: '12px', letterSpacing: '3px', marginBottom: '14px' }}>
-          DAY TOURS IN SRI LANKA
-        </p>
-        <h1 style={{
-          color: '#ffffff',
-          fontSize: 'clamp(26px, 4.5vw, 46px)',
-          fontWeight: '800',
-          lineHeight: '1.25',
-          maxWidth: '780px',
-          margin: '0 auto 18px'
-        }}>
-          Kandy to Sigiriya & Dambulla Day Tour
-        </h1>
-        <p style={{ color: '#aab', fontSize: '16px', maxWidth: '560px', margin: '0 auto 32px', lineHeight: '1.7' }}>
-          UNESCO Heritage Experience — Sigiriya Rock Fortress, Dambulla Cave Temple, village tour & spice garden. All inclusive from <strong style={{ color: '#ff7600' }}>$100 USD/person</strong>.
-        </p>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          {[
-            { icon: '⏱', label: '10–12 Hours' },
-            { icon: '🚗', label: 'Private Vehicle' },
-            { icon: '🗣', label: 'English Guide' },
-            { icon: '🍛', label: 'Lunch Included' },
-          ].map(b => (
-            <div key={b.label} style={{
-              background: 'rgba(255,255,255,0.08)',
-              border: '1px solid rgba(255,255,255,0.15)',
-              borderRadius: '10px',
-              padding: '10px 18px',
-              color: '#fff',
-              fontSize: '13px',
-              fontWeight: '600',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px'
-            }}>
-              {b.icon} {b.label}
-            </div>
-          ))}
+        {/* All text above overlay */}
+        <div style={{ position: 'relative', zIndex: 2 }}>
+          <p style={{ color: '#ff7600', fontWeight: '700', fontSize: '12px', letterSpacing: '3px', marginBottom: '14px', textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}>
+            DAY TOURS IN SRI LANKA
+          </p>
+          <h1 style={{
+            color: '#ffffff',
+            fontSize: 'clamp(26px, 4.5vw, 46px)',
+            fontWeight: '800',
+            lineHeight: '1.25',
+            maxWidth: '780px',
+            margin: '0 auto 18px',
+            textShadow: '0 2px 12px rgba(0,0,0,0.7)'
+          }}>
+            Kandy to Sigiriya & Dambulla Day Tour
+          </h1>
+          <p style={{ color: '#e8eaf0', fontSize: '16px', maxWidth: '560px', margin: '0 auto 32px', lineHeight: '1.7', textShadow: '0 1px 6px rgba(0,0,0,0.6)' }}>
+            UNESCO Heritage Experience — Sigiriya Rock Fortress, Dambulla Cave Temple, village tour & spice garden. All inclusive from <strong style={{ color: '#ff7600' }}>$100 USD/person</strong>.
+          </p>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            {[
+              { icon: '⏱', label: '10–12 Hours' },
+              { icon: '🚗', label: 'Private Vehicle' },
+              { icon: '🗣', label: 'English Guide' },
+              { icon: '🍛', label: 'Lunch Included' },
+            ].map(b => (
+              <div key={b.label} style={{
+                background: 'rgba(255,255,255,0.12)',
+                border: '1px solid rgba(255,255,255,0.25)',
+                borderRadius: '10px',
+                padding: '10px 18px',
+                color: '#fff',
+                fontSize: '13px',
+                fontWeight: '600',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                textShadow: '0 1px 4px rgba(0,0,0,0.5)'
+              }}>
+                {b.icon} {b.label}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
