@@ -244,12 +244,7 @@ export default function SriLankaTours() {
             </div>
           )}
 
-          {filtered.length === 0 ? (
-            <p style={{ color: '#aaa', textAlign: 'center', gridColumn: '1/-1' }}>
-              No packages found. Add some in your Supabase dashboard.
-            </p>
-          ) : (
-            filtered.map(pkg => (
+          {filtered.map(pkg => (
               <div key={pkg.id} style={{
                 background: '#fff',
                 borderRadius: '12px',
