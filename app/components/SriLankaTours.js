@@ -245,7 +245,7 @@ export default function SriLankaTours() {
           )}
 
           {filtered.map(pkg => (
-              <div key={pkg.id} style={{
+            <div key={pkg.id} style={{
                 background: '#fff',
                 borderRadius: '12px',
                 overflow: 'hidden',
