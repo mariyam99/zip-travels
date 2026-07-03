@@ -470,78 +470,69 @@ export default function SriLankaTours() {
 
           {filtered.map(pkg => (
             <div key={pkg.id} style={{
-                background: '#fff',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-                transition: 'transform 0.2s',
-              }}>
-                <div style={{ height: '200px', overflow: 'hidden', position: 'relative', background: '#17206c' }}>
-                  {pkg.image_url ? (
-                    <img
-                      src={pkg.image_url}
-                      alt={pkg.title}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                  ) : (
-                    <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '48px' }}>
-                      {pkg.category === 'Cultural' ? '🏛️' :
-                       pkg.category === 'Wildlife' ? '🐘' :
-                       pkg.category === 'Beach' ? '🏖️' :
-                       pkg.category === 'Adventure' ? '🧗' :
-                       pkg.category === 'Honeymoon' ? '💑' : '✈️'}
-                    </div>
-                  )}
-                </div>
-                <div style={{ padding: '18px' }}>
-                  <span style={{
-                    background: '#fff3e0',
-                    color: '#ff7600',
-                    fontSize: '11px',
-                    fontWeight: '600',
-                    padding: '3px 10px',
-                    borderRadius: '20px'
-                  }}>
-                    {pkg.category}
-                  </span>
-                  <h3 style={{
-                    fontSize: '17px',
-                    fontWeight: '700',
-                    color: '#17206c',
-                    margin: '10px 0 6px'
-                  }}>
-                    {pkg.title}
-                  </h3>
-                  <p style={{ color: '#777', fontSize: '13px', marginBottom: '14px' }}>
-                    {pkg.duration}
-                  </p>
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center'
-                  }}>
-                    <span style={{
-                      color: '#ff7600',
-                      fontWeight: '700',
-                      fontSize: '18px'
-                    }}>
-                      ${pkg.price}
-                    </span>
-                    <a href="#contact" style={{
-                      background: '#17206c',
-                      color: '#fff',
-                      padding: '8px 16px',
-                      borderRadius: '6px',
-                      fontSize: '13px',
-                      fontWeight: '600'
-                    }}>
-                      Book Now
-                    </a>
+              background: '#fff',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+              transition: 'transform 0.2s',
+            }}>
+              <div style={{ height: '200px', overflow: 'hidden', position: 'relative', background: '#17206c' }}>
+                {pkg.image_url ? (
+                  <img
+                    src={pkg.image_url}
+                    alt={pkg.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '48px' }}>
+                    {pkg.category === 'Cultural' ? '🏛️' :
+                     pkg.category === 'Wildlife' ? '🐘' :
+                     pkg.category === 'Beach' ? '🏖️' :
+                     pkg.category === 'Adventure' ? '🧗' :
+                     pkg.category === 'Honeymoon' ? '💑' : '✈️'}
                   </div>
+                )}
+              </div>
+              <div style={{ padding: '18px' }}>
+                <span style={{
+                  background: '#fff3e0',
+                  color: '#ff7600',
+                  fontSize: '11px',
+                  fontWeight: '600',
+                  padding: '3px 10px',
+                  borderRadius: '20px'
+                }}>
+                  {pkg.category}
+                </span>
+                <h3 style={{
+                  fontSize: '17px',
+                  fontWeight: '700',
+                  color: '#17206c',
+                  margin: '10px 0 6px'
+                }}>
+                  {pkg.title}
+                </h3>
+                <p style={{ color: '#777', fontSize: '13px', marginBottom: '14px' }}>
+                  {pkg.duration}
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ color: '#ff7600', fontWeight: '700', fontSize: '18px' }}>
+                    ${pkg.price}
+                  </span>
+                  <a href="#contact" style={{
+                    background: '#17206c',
+                    color: '#fff',
+                    padding: '8px 16px',
+                    borderRadius: '6px',
+                    fontSize: '13px',
+                    fontWeight: '600'
+                  }}>
+                    Book Now
+                  </a>
                 </div>
               </div>
-            ))
-          )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
