@@ -10,65 +10,66 @@ export const metadata = {
 const sections = [
   {
     num: '1',
-    title: 'Acceptance of Terms',
-    content: 'By accessing or using the ZIP Travels website and services, you agree to be bound by these Terms & Conditions. If you do not agree, please do not use our services.',
+    title: 'Booking and Payment',
+    content: `All bookings must be made through our website, email (info@ziptravels.lk), or phone (+94 777 857 626).
+
+Payments can be made securely via our payment gateway.
+
+Prices are subject to change without prior notice.`,
   },
   {
     num: '2',
-    title: 'Bookings and Payments',
-    content: `• All bookings are subject to availability and confirmation by ZIP Travels.
-• A deposit or full payment may be required to secure your booking, as communicated at the time of reservation.
-• Prices quoted are in USD unless otherwise stated and are subject to change without notice prior to booking confirmation.
-• ZIP Travels reserves the right to cancel or modify a booking in exceptional circumstances, with a full refund issued if we are responsible for the cancellation.`,
+    title: 'Cancellation and Refund Policy',
+    content: `• Cancellations 7 days or more before: Full refund.
+• Cancellations within 3–6 days: 50% refund.
+• Cancellations within 48 hours: No refund.
+
+Refunds will be processed within 7–14 business days.`,
   },
   {
     num: '3',
-    title: 'Cancellations and Refunds',
-    content: `• Cancellations made more than 24 hours before the scheduled departure are fully refunded.
-• Cancellations made within 12 hours of departure are subject to a 50% charge.
-• No-shows are non-refundable.
-• For multi-day tours and round tours, specific cancellation terms will be communicated at the time of booking.`,
+    title: 'Tour Changes and Delays',
+    content: 'We reserve the right to modify or cancel tours due to weather or safety reasons. A full refund or alternative tour will be provided.',
   },
   {
     num: '4',
-    title: 'Visa Services',
-    content: `• ZIP Travels assists with visa applications as a facilitator and is not a government authority.
-• Approval of any visa application is at the sole discretion of the relevant embassy or immigration authority.
-• ZIP Travels is not liable for visa rejections, delays, or additional fees imposed by authorities.
-• It is the applicant's responsibility to ensure all submitted documents are accurate and complete.`,
+    title: 'Travel and Safety',
+    content: `Customers must follow safety guidelines. We are not responsible for injuries, loss, or damages.
+
+Travel insurance is recommended.`,
   },
   {
     num: '5',
-    title: 'Liability',
-    content: `ZIP Travels acts as an agent on behalf of clients and suppliers (hotels, transport providers, activity operators). We are not liable for:
+    title: 'Privacy and Data Protection',
+    content: `Personal data collected through our booking forms is used only for service-related purposes.
 
-• Personal injury, illness, accident, loss, or damage arising from any tour, safari, or activity.
-• Delays, cancellations, or changes caused by weather, force majeure, government action, or third-party providers.
-• Loss of personal belongings during tours or transfers.
+Payment details are processed securely.
 
-Clients are strongly encouraged to purchase comprehensive travel insurance before travel.`,
+Please also review our Privacy Policy for more information about how we collect, use, and protect personal data.`,
   },
   {
     num: '6',
-    title: 'Client Responsibilities',
-    content: `• Clients must ensure they hold valid passports and any required visas prior to travel.
-• Clients are responsible for arriving at designated pick-up points on time.
-• ZIP Travels reserves the right to refuse service to any person behaving in a manner that is unsafe, disruptive, or disrespectful to guides, drivers, or other travellers.`,
+    title: 'Intellectual Property',
+    content: 'All website content, including text, images, and tour descriptions, is owned by ZIP Travels.',
   },
   {
     num: '7',
-    title: 'Intellectual Property',
-    content: 'All content on www.ziptravels.lk — including text, images, logos, and itineraries — is the property of ZIP Travels and may not be reproduced or used without written permission.',
+    title: 'Google Services and Review Integrations',
+    content: `Our website and administration tools may use Google services, including Google Business Profile and Google Places API features, to retrieve and display business review information related to ZIP Travels.
+
+Any Google-sourced content displayed on this website is used solely for business profile management, public review synchronization, and presentation of our business ratings and reviews.
+
+Access to Google account connections and Google API data is restricted to authorized administrators of ZIP Travels and is not intended for resale, unrelated profiling, or unauthorized sharing.`,
   },
   {
     num: '8',
-    title: 'Governing Law',
-    content: 'These Terms & Conditions are governed by the laws of Sri Lanka. Any disputes shall be subject to the exclusive jurisdiction of the courts of Sri Lanka.',
+    title: 'Third-Party Services',
+    content: 'Our website may include services, widgets, maps, or links provided by third parties such as Google, TripAdvisor, payment platforms, and social media providers. These third-party services operate under their own terms and privacy policies.',
   },
   {
     num: '9',
-    title: 'Changes to These Terms',
-    content: 'ZIP Travels reserves the right to update these Terms & Conditions at any time. Changes will be published on this page with a revised effective date. Continued use of our services constitutes acceptance of the updated terms.',
+    title: 'Changes to Services or Integrations',
+    content: 'We may update, suspend, or remove website features, third-party integrations, or connected services at any time to maintain security, compliance, service quality, or operational requirements.',
   },
 ]
 
@@ -87,7 +88,9 @@ export default function TermsPage() {
 
         <div style={{ background: '#fff8f0', borderRadius: '12px', padding: '20px 24px', border: '1.5px solid #ffd599', marginBottom: '40px' }}>
           <p style={{ color: '#7a4500', fontSize: '14px', lineHeight: '1.8' }}>
-            Please read these Terms & Conditions carefully before using ZIP Travels services. By making a booking or using our website, you confirm that you have read and agree to these terms.
+            Welcome to ZIP Travels! By using our website (
+            <a href="https://www.ziptravels.lk" style={{ color: '#ff7600', fontWeight: '600' }}>www.ziptravels.lk</a>
+            ), you agree to comply with these Terms and Conditions.
           </p>
         </div>
 
@@ -107,8 +110,9 @@ export default function TermsPage() {
           ))}
         </div>
 
+        {/* Contact */}
         <div style={{ background: '#f8f9ff', borderRadius: '14px', padding: '32px', border: '1.5px solid #e4e8f0', marginTop: '48px' }}>
-          <h2 style={{ color: '#17206c', fontWeight: '800', fontSize: '18px', marginBottom: '16px' }}>Contact Us</h2>
+          <h2 style={{ color: '#17206c', fontWeight: '800', fontSize: '18px', marginBottom: '16px' }}>10. Contact Us</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {[
               { label: 'Business', value: 'ZIP Travels' },
@@ -126,6 +130,9 @@ export default function TermsPage() {
               </div>
             ))}
           </div>
+          <p style={{ color: '#777', fontSize: '13px', marginTop: '20px', lineHeight: '1.7' }}>
+            By using our website and services, you acknowledge and agree to these Terms and Conditions. We reserve the right to modify these terms at any time.
+          </p>
         </div>
 
         <div style={{ marginTop: '40px', textAlign: 'center' }}>

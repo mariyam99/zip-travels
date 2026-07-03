@@ -1,145 +1,86 @@
-const values = [
-  { icon: '🏆', title: 'Award Winning', desc: 'Recognized as one of Sri Lanka\'s top travel agencies by global travelers' },
-  { icon: '🤝', title: 'Trusted Service', desc: 'Over 500 happy travelers from across the world trust ZIP Travels' },
-  { icon: '🗺️', title: 'Expert Guides', desc: 'Local expert guides who know every corner of Sri Lanka and beyond' },
-  { icon: '💬', title: '24/7 Support', desc: 'Round the clock support via WhatsApp, email and phone for every traveler' },
+const whyItems = [
+  {
+    title: '✓ Fully Licensed & Accredited',
+    desc: 'Certified by SLTDA, IATA, TAASL, and CAASL — your assurance of a trusted, compliant travel partner.',
+  },
+  {
+    title: '✓ 10+ Years of Industry Experience',
+    desc: 'Led by Director Ahmed Ashraf, our team brings deep expertise in travel planning, ticketing, and visa consultancy.',
+  },
+  {
+    title: '✓ End-to-End Visa Assistance',
+    desc: 'From Schengen visas to travel documentation for Europe and beyond, we simplify the entire visa process for you.',
+  },
+  {
+    title: '✓ Seamless Air Ticketing',
+    desc: 'Reliable inbound and outbound flight bookings with competitive pricing and personalized support.',
+  },
 ]
 
 export default function AboutUs() {
   return (
     <section id="about" style={{ background: '#ffffff', padding: '70px 20px' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '900px', margin: '0 auto', fontFamily: "'Segoe UI', Arial, sans-serif", color: '#2c2c2c', lineHeight: '1.7' }}>
 
-        <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-          <p style={{ color: '#ff7600', fontWeight: '600', fontSize: '13px', letterSpacing: '1px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <p style={{ color: '#ff7600', fontWeight: '700', fontSize: '13px', letterSpacing: '2px', marginBottom: '10px' }}>
             WHO WE ARE
           </p>
-          <h2 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '700', color: '#17206c', marginTop: '8px' }}>
+          <h1 style={{ fontSize: 'clamp(24px, 4vw, 38px)', fontWeight: '800', color: '#17206c' }}>
             About ZIP Travels
-          </h2>
+          </h1>
         </div>
 
-        {/* Main Grid */}
+        {/* Intro paragraphs */}
+        <p style={{ fontSize: '17px', marginBottom: '20px', color: '#444' }}>
+          Welcome to <strong>Zip Travels (Pvt) Ltd</strong>, a fully licensed Sri Lankan travel agency dedicated to making your journeys seamless and stress-free. With over 10 years of industry experience, Director <strong>Ahmed Ashraf</strong> and our team specialize in inbound and outbound air ticketing, visa assistance for Europe and many other countries, and customized tour packages tailored to your needs. Whether you're applying for a Schengen visa, booking an international flight, or planning your next holiday, we're here to guide you every step of the way.
+        </p>
+
+        <p style={{ fontSize: '17px', marginBottom: '48px', color: '#444' }}>
+          Our accreditation from the <strong>Sri Lanka Tourism Development Authority (SLTDA)</strong>, <strong>International Air Transport Association (IATA)</strong>, <strong>Travel Agents Association of Sri Lanka (TAASL)</strong>, and <strong>Civil Aviation Authority of Sri Lanka (CAASL)</strong> ensures you're working with a trusted, professional partner. At Zip Travels, we combine local expertise with global travel standards to deliver reliable service from start to finish — because your journey deserves to begin with confidence.
+        </p>
+
+        {/* Why Choose Us */}
+        <h2 style={{ fontSize: '26px', fontWeight: '800', marginBottom: '28px', color: '#17206c' }}>
+          Why Choose Us
+        </h2>
+
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '50px',
-          alignItems: 'center',
-          marginBottom: '60px'
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '24px',
         }}>
-
-          {/* Left - Image placeholder */}
-          <div style={{
-            background: '#17206c',
-            borderRadius: '16px',
-            height: '380px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            gap: '12px',
-            border: '2px solid #ff7600'
-          }}>
-            <span style={{ fontSize: '60px' }}>✈️</span>
-            <p style={{ color: '#ff7600', fontWeight: '700', fontSize: '18px' }}>ZIP TRAVELS</p>
-            <p style={{ color: '#aaa', fontSize: '13px' }}>Your Travel Partner</p>
-          </div>
-
-          {/* Right - Text */}
-          <div>
-            <h3 style={{
-              fontSize: '24px',
-              fontWeight: '700',
-              color: '#17206c',
-              marginBottom: '16px',
-              lineHeight: '1.4'
-            }}>
-              Your Trusted Travel Partner for Sri Lanka & Worldwide Holidays
-            </h3>
-            <p style={{
-              color: '#666',
-              fontSize: '15px',
-              lineHeight: '1.9',
-              marginBottom: '16px'
-            }}>
-              ZIP Travels is a premium Sri Lanka based travel agency specializing in private tours, customized itineraries, worldwide holiday packages, and visa assistance for global travelers.
-            </p>
-            <p style={{
-              color: '#666',
-              fontSize: '15px',
-              lineHeight: '1.9',
-              marginBottom: '28px'
-            }}>
-              Whether you are planning a cultural journey through ancient Sri Lanka, a wildlife safari in Yala, a romantic honeymoon in the Maldives, or a European adventure — we handle every detail so you can focus on making memories.
-            </p>
-
-            {/* Stats Row */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '20px',
-              marginBottom: '28px'
-            }}>
-              {[
-                { num: '500+', label: 'Happy Travelers' },
-                { num: '50+', label: 'Destinations' },
-                { num: '5★', label: 'Rated Tours' },
-              ].map(stat => (
-                <div key={stat.label} style={{
-                  background: '#f9f9f9',
-                  borderRadius: '10px',
-                  padding: '16px',
-                  textAlign: 'center',
-                  border: '1px solid #eee'
-                }}>
-                  <div style={{ color: '#ff7600', fontSize: '24px', fontWeight: '700' }}>{stat.num}</div>
-                  <div style={{ color: '#777', fontSize: '12px', marginTop: '4px' }}>{stat.label}</div>
-                </div>
-              ))}
-            </div>
-
-            <a href="#contact" style={{
-              background: '#ff7600',
-              color: '#17206c',
-              padding: '14px 28px',
-              borderRadius: '8px',
-              fontWeight: '700',
-              fontSize: '15px',
-              display: 'inline-block'
-            }}>
-              Get In Touch
-            </a>
-          </div>
-
-        </div>
-
-        {/* Values Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-          gap: '24px'
-        }}>
-          {values.map(val => (
-            <div key={val.title} style={{
+          {whyItems.map(item => (
+            <div key={item.title} style={{
               background: '#f9f9f9',
-              borderRadius: '12px',
-              padding: '28px',
-              borderTop: '4px solid #ff7600'
+              padding: '24px',
+              borderRadius: '10px',
+              borderLeft: '4px solid #ff7600',
             }}>
-              <div style={{ fontSize: '36px', marginBottom: '14px' }}>{val.icon}</div>
-              <h4 style={{
-                fontSize: '16px',
-                fontWeight: '700',
-                color: '#17206c',
-                marginBottom: '8px'
-              }}>
-                {val.title}
-              </h4>
-              <p style={{ color: '#777', fontSize: '14px', lineHeight: '1.7' }}>
-                {val.desc}
+              <h3 style={{ fontSize: '17px', margin: '0 0 10px', color: '#17206c', fontWeight: '700' }}>
+                {item.title}
+              </h3>
+              <p style={{ margin: 0, fontSize: '15px', color: '#666', lineHeight: '1.7' }}>
+                {item.desc}
               </p>
             </div>
           ))}
+        </div>
+
+        <style>{`
+          @media (max-width: 640px) {
+            #about .why-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
+
+        <div style={{ textAlign: 'center', marginTop: '48px' }}>
+          <a href="/contact" style={{
+            background: '#ff7600', color: '#fff',
+            padding: '14px 32px', borderRadius: '8px',
+            fontWeight: '700', fontSize: '15px', display: 'inline-block',
+          }}>
+            Get In Touch
+          </a>
         </div>
 
       </div>
