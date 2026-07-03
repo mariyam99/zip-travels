@@ -356,6 +356,62 @@ export default function SriLankaTours() {
             </div>
           )}
 
+          {/* Yala National Park Safari Card */}
+          {(active === 'All' || active === 'Wildlife') && (
+            <div style={{
+              background: '#fff',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+              transition: 'transform 0.2s',
+            }}>
+              <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+                <img
+                  src="/images/yala-safari-hero.jpg"
+                  alt="Yala National Park Safari from Galle or Mirissa"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  onError={e => {
+                    e.currentTarget.style.display = 'none'
+                    e.currentTarget.parentElement.style.background = '#17206c'
+                    e.currentTarget.parentElement.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;font-size:48px">🐆</div>'
+                  }}
+                />
+              </div>
+              <div style={{ padding: '18px' }}>
+                <span style={{
+                  background: '#fff3e0',
+                  color: '#ff7600',
+                  fontSize: '11px',
+                  fontWeight: '600',
+                  padding: '3px 10px',
+                  borderRadius: '20px'
+                }}>Wildlife · Full Day</span>
+                <h3 style={{
+                  fontSize: '17px',
+                  fontWeight: '700',
+                  color: '#17206c',
+                  margin: '10px 0 6px'
+                }}>
+                  Yala National Park Safari from Galle or Mirissa
+                </h3>
+                <p style={{ color: '#777', fontSize: '13px', marginBottom: '14px' }}>
+                  4x4 Jeep Safari · Leopards · Elephants · Morning & Afternoon
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ color: '#ff7600', fontWeight: '700', fontSize: '18px' }}>From $80</span>
+                  <a href="/tours/yala-safari-from-galle-mirissa" style={{
+                    background: '#17206c',
+                    color: '#fff',
+                    padding: '8px 16px',
+                    borderRadius: '6px',
+                    fontSize: '13px',
+                    fontWeight: '600'
+                  }}>Book Now</a>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Sigiriya to Polonnaruwa & Minneriya Safari Card */}
           {(active === 'All' || active === 'Wildlife' || active === 'Cultural') && (
             <div style={{
