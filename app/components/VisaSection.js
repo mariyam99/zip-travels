@@ -4,7 +4,6 @@ const featured = [
   { flag: '🇱🇰', name: 'Sri Lanka',   slug: 'sri-lanka' },
   { flag: '🇮🇳', name: 'India',        slug: 'india' },
   { flag: '🇮🇩', name: 'Indonesia',    slug: 'indonesia' },
-  { flag: '🇲🇻', name: 'Maldives',     slug: 'maldives' },
   { flag: '🇪🇬', name: 'Egypt',        slug: 'egypt' },
   { flag: '🇰🇭', name: 'Cambodia',     slug: 'cambodia' },
   { flag: '🇦🇪', name: 'Dubai / UAE',  slug: 'dubai-uae' },
