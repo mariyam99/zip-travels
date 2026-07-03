@@ -300,6 +300,62 @@ export default function SriLankaTours() {
             </div>
           )}
 
+          {/* Bomburuella Waterfall & Moon Plains Card */}
+          {(active === 'All' || active === 'Adventure') && (
+            <div style={{
+              background: '#fff',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+              transition: 'transform 0.2s',
+            }}>
+              <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
+                <img
+                  src="/images/bomburuella.jpg"
+                  alt="Bomburuella Waterfall & Moon Plains Day Tour"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  onError={e => {
+                    e.currentTarget.style.display = 'none'
+                    e.currentTarget.parentElement.style.background = '#17206c'
+                    e.currentTarget.parentElement.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;font-size:48px">🌊</div>'
+                  }}
+                />
+              </div>
+              <div style={{ padding: '18px' }}>
+                <span style={{
+                  background: '#fff3e0',
+                  color: '#ff7600',
+                  fontSize: '11px',
+                  fontWeight: '600',
+                  padding: '3px 10px',
+                  borderRadius: '20px'
+                }}>Adventure · Full Day</span>
+                <h3 style={{
+                  fontSize: '17px',
+                  fontWeight: '700',
+                  color: '#17206c',
+                  margin: '10px 0 6px'
+                }}>
+                  Bomburuella Waterfall & Moon Plains Day Tour
+                </h3>
+                <p style={{ color: '#777', fontSize: '13px', marginBottom: '14px' }}>
+                  ~9 Hours · Jeep Safari · Widest Waterfall · Strawberry Farm
+                </p>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ color: '#ff7600', fontWeight: '700', fontSize: '18px' }}>Contact for Price</span>
+                  <a href="/tours/bomburuella-waterfall-moon-plains-day-tour" style={{
+                    background: '#17206c',
+                    color: '#fff',
+                    padding: '8px 16px',
+                    borderRadius: '6px',
+                    fontSize: '13px',
+                    fontWeight: '600'
+                  }}>Book Now</a>
+                </div>
+              </div>
+            </div>
+          )}
+
           {filtered.map(pkg => (
             <div key={pkg.id} style={{
                 background: '#fff',
