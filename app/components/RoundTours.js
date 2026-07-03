@@ -1,3 +1,5 @@
+'use client'
+
 const tours = [
   {
     slug: '/round-tours/5-day-sigiriya-kandy-nuwara-eliya-bentota',
