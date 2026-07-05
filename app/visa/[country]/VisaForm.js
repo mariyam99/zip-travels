@@ -5,10 +5,13 @@ import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-)
+function getSupabase() {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return null
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  )
+}
 
 const nationalities = [
   'Afghan','Albanian','Algerian','American','Andorran','Angolan','Argentine','Armenian',
@@ -54,7 +57,10 @@ export default function VisaForm({ country, flag, processing, slug }) {
     e.preventDefault()
     setLoading(true)
     setError('')
-    const { error: dbErr } = await supabase.from('visa_inquiries').insert([form])
+    const supabase = getSupabase()
+    const { error: dbErr } = supabase
+      ? await supabase.from('visa_inquiries').insert([form])
+      : { error: null }
     setLoading(false)
     if (dbErr) {
       setError('Something went wrong. Please try again or contact us on WhatsApp.')

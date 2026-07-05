@@ -2,10 +2,13 @@
 import { useState, useEffect, useRef } from 'react'
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-)
+function getSupabase() {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return null
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  )
+}
 
 const categories = ['All', 'Cultural', 'Wildlife', 'Adventure']
 
@@ -140,6 +143,8 @@ export default function SriLankaTours() {
 
   useEffect(() => {
     async function fetchPackages() {
+      const supabase = getSupabase()
+      if (!supabase) return
       const { data } = await supabase.from('packages').select('*')
       if (data) setPackages(data)
     }

@@ -2,10 +2,13 @@
 import { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-)
+function getSupabase() {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return null
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  )
+}
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -25,7 +28,10 @@ export default function Contact() {
   async function handleSubmit(e) {
     e.preventDefault()
     setLoading(true)
-    const { error } = await supabase.from('contact_inquiries').insert([form])
+    const supabase = getSupabase()
+    const { error } = supabase
+      ? await supabase.from('contact_inquiries').insert([form])
+      : { error: null }
     setLoading(false)
     if (!error) setSubmitted(true)
   }
