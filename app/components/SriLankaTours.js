@@ -104,6 +104,7 @@ function TourCard({ card }) {
       flexShrink: 0,
       display: 'flex',
       flexDirection: 'column',
+      height: '380px',
     }}>
       <div style={{ height: '200px', overflow: 'hidden', position: 'relative' }}>
         <img

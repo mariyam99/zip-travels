@@ -139,7 +139,7 @@ export default function TourContent() {
         </div>
       </div>
 
-      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '60px 20px', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 360px', gap: '48px', alignItems: 'start' }}>
+      <div className="tour-layout" style={{ maxWidth: '1100px', margin: '0 auto', padding: '60px 20px', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 360px', gap: '48px', alignItems: 'start' }}>
 
         {/* LEFT */}
         <div>
@@ -253,7 +253,7 @@ export default function TourContent() {
                 ].map(field => (
                   <div key={field.name}>
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: '600', color: '#17206c', marginBottom: '6px' }}>{field.label}</label>
-                    <input type={field.type} name={field.name} value={form[field.name]} onChange={handleChange} placeholder={field.placeholder} required={field.required}
+                    <input type={field.type} name={field.name} value={form[field.name]} onChange={handleChange} placeholder={field.placeholder} required={field.required} min={field.type === 'date' ? new Date().toISOString().split('T')[0] : undefined}
                       style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1.5px solid #dde4f0', fontSize: '14px', color: '#333', outline: 'none', boxSizing: 'border-box' }} />
                   </div>
                 ))}
@@ -284,6 +284,12 @@ export default function TourContent() {
 
       <Footer />
       <WhatsAppButton />
+      <style>{`
+        @media (max-width: 768px) {
+          .tour-layout { grid-template-columns: 1fr !important; }
+          .tour-layout > div:last-child { position: static !important; }
+        }
+      `}</style>
     </main>
   )
 }

@@ -65,7 +65,7 @@ export default function RoundTours() {
             <a
               key={tour.slug}
               href={tour.slug}
-              style={{ textDecoration: 'none', display: 'block' }}
+              style={{ textDecoration: 'none', display: 'flex' }}
             >
               <div style={{
                 background: '#fff',
@@ -74,7 +74,9 @@ export default function RoundTours() {
                 boxShadow: '0 4px 20px rgba(23,32,108,0.10)',
                 border: '1.5px solid #e8ecf4',
                 transition: 'transform 0.2s, box-shadow 0.2s',
-                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%',
               }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 12px 36px rgba(23,32,108,0.16)' }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(23,32,108,0.10)' }}
@@ -102,14 +104,14 @@ export default function RoundTours() {
                 </div>
 
                 {/* Body */}
-                <div style={{ padding: '20px' }}>
+                <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', flex: 1 }}>
                   <h3 style={{ color: '#17206c', fontWeight: '800', fontSize: '18px', margin: '0 0 6px' }}>
                     {tour.title}
                   </h3>
                   <p style={{ color: '#ff7600', fontSize: '12px', fontWeight: '600', marginBottom: '10px', letterSpacing: '0.3px' }}>
                     {tour.subtitle}
                   </p>
-                  <p style={{ color: '#666', fontSize: '13px', lineHeight: '1.7', marginBottom: '18px' }}>
+                  <p style={{ color: '#666', fontSize: '13px', lineHeight: '1.7', marginBottom: '18px', flex: 1 }}>
                     {tour.description}
                   </p>
                   <div style={{

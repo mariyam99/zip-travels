@@ -3,7 +3,7 @@ export default function Footer() {
     <footer style={{ background: '#17206c', padding: '24px 20px', borderTop: '3px solid #ff7600' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
         <p style={{ color: '#ccc', fontSize: '13px', marginBottom: '8px', lineHeight: '1.8' }}>
-          © 2026 ZIP Travels. All rights reserved. |{' '}
+          © 2026 ZIP Travels Pvt Ltd. All rights reserved. |{' '}
           <a href="https://www.ziptravels.lk" style={{ color: '#ff7600', fontWeight: '600' }}>
             www.ziptravels.lk
           </a>

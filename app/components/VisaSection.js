@@ -11,6 +11,7 @@ const featured = [
   { flag: '🇵🇭', name: 'Philippines',  slug: 'philippines' },
   { flag: '🇨🇳', name: 'China',        slug: 'china' },
   { flag: '🇦🇿', name: 'Azerbaijan',   slug: 'azerbaijan' },
+  { flag: '🇪🇺', name: 'Europe (Schengen)', slug: 'europe' },
   { flag: '🌍', name: 'Other Countries', slug: 'other' },
 ]
 
@@ -80,7 +81,7 @@ export default function VisaSection() {
                 {/* Flag image */}
                 <div style={{ height: '110px', overflow: 'hidden', position: 'relative', background: '#f0f2f8' }}>
                   <img
-                    src={`/images/flags/${c.slug}.jpg`}
+                    src={`/images/flags/${c.image || c.slug + '.jpg'}`}
                     alt={`${c.name} flag`}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     onError={e => {

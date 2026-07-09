@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import FAQ from '../components/FAQ'
+import Licenses from '../components/Licenses'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
 
@@ -13,6 +14,7 @@ export default function FAQPage() {
     <main>
       <Navbar />
       <FAQ />
+      <Licenses />
       <Footer />
       <WhatsAppButton />
     </main>

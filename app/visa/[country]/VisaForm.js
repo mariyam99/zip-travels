@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Navbar from '../../components/Navbar'
+import Licenses from '../../components/Licenses'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
 import { createClient } from '@supabase/supabase-js'
@@ -38,7 +39,6 @@ export default function VisaForm({ country, flag, processing, slug }) {
     email: '',
     phone: '',
     nationality: '',
-    passport_number: '',
     travel_date: '',
     return_date: '',
     num_travelers: '1',
@@ -69,6 +69,8 @@ export default function VisaForm({ country, flag, processing, slug }) {
     }
   }
 
+  const today = new Date().toISOString().split('T')[0]
+
   const input = {
     width: '100%', padding: '11px 14px', borderRadius: '8px',
     border: '1.5px solid #dde4f0', fontSize: '14px', color: '#333',
@@ -86,7 +88,7 @@ export default function VisaForm({ country, flag, processing, slug }) {
       {/* Hero */}
       <div style={{
         background: 'linear-gradient(135deg, #17206c 0%, #0d1340 100%)',
-        padding: '72px 20px 60px',
+        padding: '36px 20px 30px',
         textAlign: 'center',
       }}>
         <div style={{ fontSize: '64px', marginBottom: '16px', lineHeight: 1 }}>{flag}</div>
@@ -193,10 +195,6 @@ export default function VisaForm({ country, flag, processing, slug }) {
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '18px', marginBottom: '28px' }}>
                   <div>
-                    <label style={label}>Passport Number *</label>
-                    <input style={input} type="text" name="passport_number" placeholder="AB1234567" required value={form.passport_number} onChange={handleChange} />
-                  </div>
-                  <div>
                     <label style={label}>Number of Travellers *</label>
                     <select style={input} name="num_travelers" required value={form.num_travelers} onChange={handleChange}>
                       {['1','2','3','4','5','6','7','8','9','10'].map(n => (
@@ -206,11 +204,11 @@ export default function VisaForm({ country, flag, processing, slug }) {
                   </div>
                   <div>
                     <label style={label}>Travel Date *</label>
-                    <input style={input} type="date" name="travel_date" required value={form.travel_date} onChange={handleChange} />
+                    <input style={input} type="date" name="travel_date" required min={today} value={form.travel_date} onChange={handleChange} />
                   </div>
                   <div>
                     <label style={label}>Return Date *</label>
-                    <input style={input} type="date" name="return_date" required value={form.return_date} onChange={handleChange} />
+                    <input style={input} type="date" name="return_date" required min={today} value={form.return_date} onChange={handleChange} />
                   </div>
                 </div>
 
@@ -258,6 +256,7 @@ export default function VisaForm({ country, flag, processing, slug }) {
         )}
       </div>
 
+      <Licenses />
       <Footer />
       <WhatsAppButton />
     </main>

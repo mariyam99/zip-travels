@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <nav style={{
       background: '#17206c',
-      padding: '14px 20px',
+      padding: '4px 20px',
       position: 'sticky',
       top: 0,
       zIndex: 1000,
@@ -21,8 +21,15 @@ export default function Navbar() {
         alignItems: 'center'
       }}>
 
-        <a href="/" style={{ color: '#ff7600', fontSize: '20px', fontWeight: '700' }}>
-          ✈ ZIP TRAVELS
+        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '4px', textDecoration: 'none' }}>
+          <img
+            src="/images/logo.png"
+            alt="ZIP Travels Logo"
+            style={{ height: '55px', width: 'auto', mixBlendMode: 'screen' }}
+          />
+          <span style={{ color: '#ff7600', fontSize: '20px', fontWeight: '800', letterSpacing: '0.5px', lineHeight: 1 }}>
+            ZIP <span style={{ color: '#ffffff' }}>TRAVELS</span>
+          </span>
         </a>
 
         {/* Desktop Menu */}
@@ -36,14 +43,14 @@ export default function Navbar() {
           <a href="#visa" style={{ color: '#ccc', fontSize: '14px' }}>Apply for Visa</a>
           <a href="/about" style={{ color: '#ccc', fontSize: '14px' }}>About Us</a>
           <a href="/faq" style={{ color: '#ccc', fontSize: '14px' }}>FAQ</a>
-          <a href="#contact" style={{
+          <a href="/contact" style={{
             background: '#ff7600',
             color: '#17206c',
             padding: '8px 18px',
             borderRadius: '6px',
             fontSize: '14px',
             fontWeight: '600'
-          }}>Contact</a>
+          }}>✆ Contact</a>
         </div>
 
         {/* Mobile Hamburger */}
@@ -78,7 +85,7 @@ export default function Navbar() {
           <a href="#visa" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>Apply for Visa</a>
           <a href="/about" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>About Us</a>
           <a href="/faq" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>FAQ</a>
-          <a href="#contact" onClick={() => setMenuOpen(false)} style={{
+          <a href="/contact" onClick={() => setMenuOpen(false)} style={{
             background: '#ff7600',
             color: '#17206c',
             padding: '10px 18px',
@@ -86,7 +93,7 @@ export default function Navbar() {
             fontSize: '15px',
             fontWeight: '600',
             textAlign: 'center'
-          }}>Contact</a>
+          }}>✆ Contact</a>
         </div>
       )}
 

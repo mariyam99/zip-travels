@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar'
+import Licenses from '../components/Licenses'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
 
@@ -141,6 +142,7 @@ export default function PrivacyPolicyPage() {
         </div>
       </div>
 
+      <Licenses />
       <Footer />
       <WhatsAppButton />
     </main>

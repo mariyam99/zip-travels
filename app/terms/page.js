@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar'
+import Licenses from '../components/Licenses'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
 
@@ -11,65 +12,67 @@ const sections = [
   {
     num: '1',
     title: 'Booking and Payment',
-    content: `All bookings must be made through our website, email (info@ziptravels.lk), or phone (+94 777 857 626).
-
-Payments can be made securely via our payment gateway.
-
-Prices are subject to change without prior notice.`,
+    content: `• All payments must be made solely to the official company account of Zip Travels Pvt Ltd.
+• Payments made to any personal or individual bank account will not be accepted or recognized.
+• ZIP Travels shall not be held liable for any payment made to an account other than our official company account.`,
   },
   {
     num: '2',
     title: 'Cancellation and Refund Policy',
-    content: `• Cancellations 7 days or more before: Full refund.
-• Cancellations within 3–6 days: 50% refund.
-• Cancellations within 48 hours: No refund.
-
-Refunds will be processed within 7–14 business days.`,
+    content: `• This policy applies to inbound tours (tours within Sri Lanka). For outbound tours (tours to other countries), the cancellation and refund conditions of the relevant supplier shall apply instead.
+• Cancellations made 7 days or more before departure: full refund.
+• Cancellations made within 3–6 days of departure: 50% refund.
+• Cancellations made within 48 hours of departure: no refund.
+• Approved refunds will be processed within 7–14 business days.`,
   },
   {
     num: '3',
-    title: 'Tour Changes and Delays',
-    content: 'We reserve the right to modify or cancel tours due to weather or safety reasons. A full refund or alternative tour will be provided.',
+    title: 'Air Ticket Conditions',
+    content: `• Air ticket prices are subject to change at any time and are not guaranteed while a booking is held. The price is confirmed only once full payment has been received.
+• A service fee of USD 50–100 applies to all flight cancellations, in addition to any fees charged by the airline.
+• Most budget airline tickets are strictly non-refundable and do not permit date changes.
+• Where a date change is permitted by the airline, the request must be submitted at least 24 hours before departure, subject to the airline's fare rules, seat availability, and any applicable fees.
+• All airline fare rules and conditions, including ticket class, refund eligibility, date-change policy, and baggage allowance, shall take precedence and apply in full.
+• ZIP Travels facilitates flight bookings on the client's behalf but does not control airline decisions. Our service fees are separate and non-refundable, regardless of the outcome.`,
   },
   {
     num: '4',
-    title: 'Travel and Safety',
-    content: `Customers must follow safety guidelines. We are not responsible for injuries, loss, or damages.
-
-Travel insurance is recommended.`,
+    title: 'Visa Conditions',
+    content: `• Visa fees and service charges are strictly non-refundable under any circumstances.
+• In the event a visa application is rejected by the relevant embassy, consulate, or immigration authority, no refund will be provided for the visa fee, service charge, or any related costs incurred.
+• ZIP Travels processes visa applications on the client's behalf but does not control embassy or immigration authority decisions. Our service fees are separate and non-refundable, regardless of the outcome.`,
   },
   {
     num: '5',
-    title: 'Privacy and Data Protection',
-    content: `Personal data collected through our booking forms is used only for service-related purposes.
-
-Payment details are processed securely.
-
-Please also review our Privacy Policy for more information about how we collect, use, and protect personal data.`,
+    title: 'Tour Changes and Delays',
+    content: `• ZIP Travels reserves the right to modify or cancel a tour due to weather conditions or safety concerns.
+• In such cases, clients will be offered a full refund or an alternative tour.`,
   },
   {
     num: '6',
-    title: 'Intellectual Property',
-    content: 'All website content, including text, images, and tour descriptions, is owned by ZIP Travels.',
+    title: 'Travel and Safety',
+    content: `• Clients are required to follow all safety guidelines provided during the course of the tour.
+• ZIP Travels is not liable for any injury, loss, or damage incurred during travel.
+• Clients are strongly advised to obtain travel insurance.`,
   },
   {
     num: '7',
-    title: 'Google Services and Review Integrations',
-    content: `Our website and administration tools may use Google services, including Google Business Profile and Google Places API features, to retrieve and display business review information related to ZIP Travels.
-
-Any Google-sourced content displayed on this website is used solely for business profile management, public review synchronization, and presentation of our business ratings and reviews.
-
-Access to Google account connections and Google API data is restricted to authorized administrators of ZIP Travels and is not intended for resale, unrelated profiling, or unauthorized sharing.`,
+    title: 'Privacy and Data Protection',
+    content: `• Personal information collected through our booking forms is used solely for service-related purposes.
+• Payment details are processed and stored securely.
+• Please refer to our Privacy Policy for further information on how we collect, use, and protect personal data.`,
   },
   {
     num: '8',
-    title: 'Third-Party Services',
-    content: 'Our website may include services, widgets, maps, or links provided by third parties such as Google, TripAdvisor, payment platforms, and social media providers. These third-party services operate under their own terms and privacy policies.',
+    title: 'Intellectual Property',
+    content: `• All content on this website, including text, images, and tour descriptions, is the property of ZIP Travels.`,
   },
   {
     num: '9',
-    title: 'Changes to Services or Integrations',
-    content: 'We may update, suspend, or remove website features, third-party integrations, or connected services at any time to maintain security, compliance, service quality, or operational requirements.',
+    title: 'Third-Party Services and Changes to Integrations',
+    content: `• Our website may incorporate services, tools, or links provided by third parties, including Google, TripAdvisor, payment providers, and social media platforms.
+• Such third-party services are governed by their own respective terms and privacy policies.
+• ZIP Travels reserves the right to update, suspend, or remove any website feature or third-party integration at any time to maintain security, compliance, or service quality.`,
   },
 ]
 
@@ -140,6 +143,7 @@ export default function TermsPage() {
         </div>
       </div>
 
+      <Licenses />
       <Footer />
       <WhatsAppButton />
     </main>

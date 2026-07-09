@@ -3,19 +3,34 @@ import { useState, useEffect } from 'react'
 
 const slides = [
   {
-    image: 'https://images.unsplash.com/photo-1586183189334-1d3b5e57c5c0?w=1600',
+    image: '/images/land1.jpg',
     title: 'Discover Sri Lanka',
     subtitle: 'Ancient temples, golden beaches & lush tea country'
   },
   {
-    image: 'https://images.unsplash.com/photo-1546708973-b339540b5162?w=1600',
+    image: '/images/land2.jpg',
     title: 'Wildlife Safari Adventures',
     subtitle: 'Spot leopards and elephants in their natural habitat'
   },
   {
-    image: 'https://images.unsplash.com/photo-1540202404-a2f29016b523?w=1600',
+    image: '/images/land3.jpg',
     title: 'Explore The World',
     subtitle: 'From the Maldives to Europe — your journey starts here'
+  },
+  {
+    image: '/images/land4.jpg',
+    title: 'Breathtaking Landscapes',
+    subtitle: 'Sri Lanka natural wonders await at every turn'
+  },
+  {
+    image: '/images/land5.jpg',
+    title: 'Private Tours & Transfers',
+    subtitle: 'Personalised journeys crafted just for you'
+  },
+  {
+    image: '/images/land6.jpg',
+    title: 'Your Adventure Begins Here',
+    subtitle: 'Trusted Sri Lanka travel agency with 10+ years of experience'
   },
 ]
 
@@ -66,18 +81,26 @@ export default function Hero() {
         padding: '20px'
       }}>
 
-        <div style={{
-          display: 'inline-block',
-          background: 'rgba(245, 166, 35, 0.15)',
-          border: '1px solid #ff7600',
-          color: 'rgb(42, 245, 35)',
-          padding: '6px 16px',
-          borderRadius: '20px',
-          fontSize: '13px',
-          letterSpacing: '1px',
-          marginBottom: '24px'
-        }}>
-          🌍 TRUSTED SRI LANKA TRAVEL AGENCY
+        <div style={{ marginBottom: '24px' }}>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '11px', letterSpacing: '2px', fontWeight: '600', marginBottom: '10px' }}>
+            LICENSED & ACCREDITED BY
+          </p>
+          <div style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center' }}>
+            {['SLTDA', 'TAASL', 'IATA', 'CAASL', 'Sri Lanka Tourism'].map(name => (
+              <div key={name} style={{
+                background: 'rgba(255,255,255,0.12)',
+                borderRadius: '20px',
+                padding: '5px 14px',
+                border: '1px solid rgba(255,255,255,0.25)',
+                color: '#fff',
+                fontSize: '12px',
+                fontWeight: '700',
+                letterSpacing: '0.5px',
+              }}>
+                {name}
+              </div>
+            ))}
+          </div>
         </div>
 
         <h1 style={{
@@ -102,12 +125,7 @@ export default function Hero() {
           {slides[current].subtitle}
         </p>
 
-        <div style={{
-          display: 'flex',
-          gap: '16px',
-          justifyContent: 'center',
-          flexWrap: 'wrap'
-        }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <a href="#srilanka" style={{
             background: '#ff7600',
             color: '#17206c',
@@ -117,16 +135,6 @@ export default function Hero() {
             fontWeight: '700'
           }}>
             Explore Sri Lanka Tours
-          </a>
-          <a href="#world" style={{
-            border: '2px solid #ff7600',
-            color: '#ff7600',
-            padding: '14px 28px',
-            borderRadius: '8px',
-            fontSize: '15px',
-            fontWeight: '600'
-          }}>
-            Around The World
           </a>
         </div>
 

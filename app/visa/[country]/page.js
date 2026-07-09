@@ -12,6 +12,7 @@ const countryMeta = {
   'philippines':  { name: 'Philippines',     flag: '🇵🇭', processing: '5–7 working days' },
   'china':        { name: 'China',           flag: '🇨🇳', processing: '5–7 working days' },
   'azerbaijan':   { name: 'Azerbaijan',      flag: '🇦🇿', processing: '3–5 working days' },
+  'europe':       { name: 'Europe (Schengen)', flag: '🇪🇺', processing: '10–15 working days' },
   'other':        { name: 'Other Countries', flag: '🌍', processing: 'Varies by country' },
 }
 
