@@ -43,6 +43,14 @@ export default function Navbar() {
           <a href="#visa" style={{ color: '#ccc', fontSize: '14px' }}>Apply for Visa</a>
           <a href="/about" style={{ color: '#ccc', fontSize: '14px' }}>About Us</a>
           <a href="/faq" style={{ color: '#ccc', fontSize: '14px' }}>FAQ</a>
+          <a href="/payment" style={{
+            background: '#25D366',
+            color: '#fff',
+            padding: '8px 18px',
+            borderRadius: '6px',
+            fontSize: '14px',
+            fontWeight: '700'
+          }}>💳 Pay Now</a>
           <a href="/contact" style={{
             background: '#ff7600',
             color: '#17206c',
@@ -85,6 +93,15 @@ export default function Navbar() {
           <a href="#visa" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>Apply for Visa</a>
           <a href="/about" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>About Us</a>
           <a href="/faq" onClick={() => setMenuOpen(false)} style={{ color: '#ccc', fontSize: '15px' }}>FAQ</a>
+          <a href="/payment" onClick={() => setMenuOpen(false)} style={{
+            background: '#25D366',
+            color: '#fff',
+            padding: '10px 18px',
+            borderRadius: '6px',
+            fontSize: '15px',
+            fontWeight: '700',
+            textAlign: 'center'
+          }}>💳 Pay Now</a>
           <a href="/contact" onClick={() => setMenuOpen(false)} style={{
             background: '#ff7600',
             color: '#17206c',

@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import Payment from '../components/Payment'
+import PaymentForm from '../components/PaymentForm'
 import Licenses from '../components/Licenses'
 import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
@@ -31,6 +32,19 @@ export default function PaymentPage() {
       </div>
 
       <Payment />
+
+      {/* Online Payment Request Form */}
+      <div style={{ background: '#f8f9ff', padding: '72px 20px', borderTop: '1px solid #e4e8f0' }}>
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <p style={{ color: '#ff7600', fontWeight: '700', fontSize: '13px', letterSpacing: '2px', marginBottom: '10px' }}>PAY ONLINE</p>
+          <h2 style={{ fontSize: 'clamp(22px, 4vw, 32px)', fontWeight: '800', color: '#17206c', marginBottom: '12px' }}>Submit a Payment Request</h2>
+          <p style={{ color: '#777', fontSize: '15px', maxWidth: '480px', margin: '0 auto', lineHeight: '1.7' }}>
+            Enter your details and amount below. Our team will process your payment and confirm via WhatsApp.
+          </p>
+        </div>
+        <PaymentForm />
+      </div>
+
       <Licenses />
       <Footer />
       <WhatsAppButton />

@@ -1,0 +1,41 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ziptravels",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000
+    },
+    {
+      "name": "fashion-ai-nano-banana",
+      "runtimeExecutable": "C:\\Users\\mariy\\OneDrive\\Desktop\\fashion_ai_nano_banana_pro\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "backend.main:app",
+        "--reload",
+        "--app-dir",
+        "C:\\Users\\mariy\\OneDrive\\Desktop\\fashion_ai_nano_banana_pro"
+      ],
+      "port": 8000
+    },
+    {
+      "name": "fashion-ai-single-reference",
+      "runtimeExecutable": "C:\\Users\\mariy\\Downloads\\fashion_ai_nano_banana_single_reference_manual_prompt\\fashion_ai_nano_banana_single_reference\\.venv\\Scripts\\python.exe",
+      "runtimeArgs": [
+        "-m",
+        "uvicorn",
+        "backend.main:app",
+        "--reload",
+        "--app-dir",
+        "C:\\Users\\mariy\\Downloads\\fashion_ai_nano_banana_single_reference_manual_prompt\\fashion_ai_nano_banana_single_reference",
+        "--reload-dir",
+        "C:\\Users\\mariy\\Downloads\\fashion_ai_nano_banana_single_reference_manual_prompt\\fashion_ai_nano_banana_single_reference",
+        "--port",
+        "8001"
+      ],
+      "port": 8001
+    }
+  ]
+}
