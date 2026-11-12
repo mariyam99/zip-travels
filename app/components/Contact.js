@@ -1,6 +1,8 @@
 'use client'
 import { useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
+import { sendEnquiry, ENQUIRY_ERROR } from '@/app/lib/enquiry'
+import EnquiryError from '@/app/components/EnquiryError'
 
 function getSupabase() {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) return null
@@ -22,18 +24,22 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   function handleChange(e) { setForm({ ...form, [e.target.name]: e.target.value }) }
 
   async function handleSubmit(e) {
     e.preventDefault()
     setLoading(true)
+    setError('')
     const supabase = getSupabase()
-    const { error } = supabase
-      ? await supabase.from('contact_inquiries').insert([form])
-      : { error: null }
+    const [saved, emailed] = await Promise.all([
+      supabase ? supabase.from('contact_inquiries').insert([form]).then(r => !r.error, () => false) : false,
+      sendEnquiry('Contact', form),
+    ])
     setLoading(false)
-    if (!error) setSubmitted(true)
+    if (saved || emailed) setSubmitted(true)
+    else setError(ENQUIRY_ERROR)
   }
 
   const input = {
@@ -176,6 +182,7 @@ export default function Contact() {
                   required value={form.message} onChange={handleChange} />
               </div>
 
+              <EnquiryError message={error} />
               <button type="submit" disabled={loading} style={{
                 background: loading ? '#aaa' : '#ff7600', color: '#fff',
                 padding: '14px', borderRadius: '10px', border: 'none',

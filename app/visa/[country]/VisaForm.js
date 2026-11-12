@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { sendEnquiry, ENQUIRY_ERROR } from '@/app/lib/enquiry'
 import Navbar from '../../components/Navbar'
 import Licenses from '../../components/Licenses'
 import Footer from '../../components/Footer'
@@ -58,14 +59,15 @@ export default function VisaForm({ country, flag, processing, slug }) {
     setLoading(true)
     setError('')
     const supabase = getSupabase()
-    const { error: dbErr } = supabase
-      ? await supabase.from('visa_inquiries').insert([form])
-      : { error: null }
+    const [saved, emailed] = await Promise.all([
+      supabase ? supabase.from('visa_inquiries').insert([form]).then(r => !r.error, () => false) : false,
+      sendEnquiry('Visa', form),
+    ])
     setLoading(false)
-    if (dbErr) {
-      setError('Something went wrong. Please try again or contact us on WhatsApp.')
-    } else {
+    if (saved || emailed) {
       setSubmitted(true)
+    } else {
+      setError(ENQUIRY_ERROR)
     }
   }
 

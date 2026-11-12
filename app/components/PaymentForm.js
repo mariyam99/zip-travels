@@ -1,5 +1,7 @@
 'use client'
 import { useState } from 'react'
+import { sendEnquiry, ENQUIRY_ERROR } from '@/app/lib/enquiry'
+import EnquiryError from '@/app/components/EnquiryError'
 
 export default function PaymentForm() {
   const [form, setForm] = useState({
@@ -13,6 +15,7 @@ export default function PaymentForm() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [ref, setRef] = useState('')
 
   function handleChange(e) {
@@ -26,10 +29,16 @@ export default function PaymentForm() {
   async function handleSubmit(e) {
     e.preventDefault()
     setLoading(true)
+    setError('')
     const payRef = generateRef()
-    setRef(payRef)
+    const ok = await sendEnquiry('Payment request', { payment_reference: payRef, ...form })
     setLoading(false)
-    setSubmitted(true)
+    if (ok) {
+      setRef(payRef)
+      setSubmitted(true)
+    } else {
+      setError(ENQUIRY_ERROR)
+    }
   }
 
   const input = {
@@ -135,6 +144,7 @@ export default function PaymentForm() {
             </p>
           </div>
 
+          <EnquiryError message={error} />
           <button type="submit" disabled={loading} style={{
             background: loading ? '#aaa' : '#ff7600',
             color: '#fff', padding: '14px', borderRadius: '10px',

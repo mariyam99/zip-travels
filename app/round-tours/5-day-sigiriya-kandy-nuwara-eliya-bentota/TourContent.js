@@ -1,5 +1,7 @@
 'use client'
 import { useState } from 'react'
+import { sendEnquiry, ENQUIRY_ERROR } from '@/app/lib/enquiry'
+import EnquiryError from '@/app/components/EnquiryError'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
@@ -95,6 +97,7 @@ export default function TourContent() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', date: '', passengers: '2', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   function handleChange(e) {
     setForm(f => ({ ...f, [e.target.name]: e.target.value }))
@@ -103,9 +106,11 @@ export default function TourContent() {
   async function handleSubmit(e) {
     e.preventDefault()
     setLoading(true)
-    await new Promise(r => setTimeout(r, 800))
-    setSubmitted(true)
+    setError('')
+    const ok = await sendEnquiry('Tour booking', form)
     setLoading(false)
+    if (ok) setSubmitted(true)
+    else setError(ENQUIRY_ERROR)
   }
 
   return (
@@ -269,6 +274,7 @@ export default function TourContent() {
                   <textarea name="message" value={form.message} onChange={handleChange} placeholder="Hotel preferences, dietary needs, special occasions..." rows={3}
                     style={{ width: '100%', padding: '10px 14px', borderRadius: '8px', border: '1.5px solid #dde4f0', fontSize: '14px', color: '#333', outline: 'none', boxSizing: 'border-box', resize: 'vertical', fontFamily: 'inherit' }} />
                 </div>
+                <EnquiryError message={error} />
                 <button type="submit" disabled={loading}
                   style={{ background: loading ? '#aaa' : '#ff7600', color: '#fff', padding: '14px', borderRadius: '10px', border: 'none', fontWeight: '800', fontSize: '15px', cursor: loading ? 'not-allowed' : 'pointer', width: '100%' }}>
                   {loading ? 'Sending...' : '🚀 Request a Quote'}

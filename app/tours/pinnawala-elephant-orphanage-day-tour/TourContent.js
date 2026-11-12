@@ -1,5 +1,7 @@
 'use client'
 import { useState } from 'react'
+import { sendEnquiry, ENQUIRY_ERROR } from '@/app/lib/enquiry'
+import EnquiryError from '@/app/components/EnquiryError'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import WhatsAppButton from '../../components/WhatsAppButton'
@@ -60,6 +62,7 @@ export default function TourContent() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', date: '', passengers: '1', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   function handleChange(e) {
     setForm(f => ({ ...f, [e.target.name]: e.target.value }))
@@ -68,9 +71,11 @@ export default function TourContent() {
   async function handleSubmit(e) {
     e.preventDefault()
     setLoading(true)
-    await new Promise(r => setTimeout(r, 800))
-    setSubmitted(true)
+    setError('')
+    const ok = await sendEnquiry('Tour booking', form)
     setLoading(false)
+    if (ok) setSubmitted(true)
+    else setError(ENQUIRY_ERROR)
   }
 
   return (
@@ -372,6 +377,8 @@ export default function TourContent() {
                     }}
                   />
                 </div>
+
+                <EnquiryError message={error} />
 
                 <button
                   type="submit"
